@@ -1,0 +1,56 @@
+body {
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container-home {
+    padding: 7.5rem 8rem 0 7rem;
+}
+
+.home-link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.home-link:hover {
+    color: #fff;
+    font-weight: bold
+}
+
+.home-link span{
+    font-size: 2rem;
+}
+
+.center-logo {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* FIXES */
+#informacoes {
+    top: 5rem;
+    right: -5rem;
+}
+
+#lineUp {
+    left: -3rem;
+}
+/* END FIXES */
+
+/* SOUND */
+.sound {
+    padding-top: 2rem
+}
+
+.sound path {
+    fill: #fff;
+}
+
+.sound:hover {
+    transform: scale(1.1);
+    transition: 0.1s ease-in-out;
+}
+/* END SOUND */

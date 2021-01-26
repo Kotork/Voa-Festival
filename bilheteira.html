@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilheteira - Voa Festival</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" href="images/voaMenu.png">
+
+    <!-- Bootstrap 5.0.0 Beta -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!-- My Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/bilheteira.css">
+</head>
+<body>
+    <!-- MODAL TO BUY TICKETS -->
+    <div class="modal fade" id="modalComprar" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen-lg-down modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Comprar Bilhete</h4>
+                    <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-3">
+                                <div class="d-flex flex-column justify-content-evenly align-items-center h-100">
+                                    <span id="ticket16" class="modal-bilhete text-center" onclick="updateState({price: '€ 50.00', ticket: 'ticket16'})">Bilhete dia 16</span>
+                                    <span id="ticket17" class="modal-bilhete text-center" onclick="updateState({price: '€ 50.00', ticket: 'ticket17'})">Bilhete dia 17</span>
+                                    <span id="ticketpass" class="modal-bilhete text-center" onclick="updateState({price: '€ 90.00', ticket: 'ticketpass'})">Passe Geral</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <div class="py-3 px-3">
+                                    <label class="form-label" for="nomeCompleto">Nome Completo *</label>
+                                    <input type="text" class="form-control" id="nomeCompleto" required>
+                                </div>
+                                <div class="py-3 px-3">
+                                    <label class="form-label" for="email">Email *</label>
+                                    <input type="email" class="form-control" id="email" required>                            
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center mt-4 py-3 px-3">
+                                    <span id="refmb" class="modal-metodo-pagamento text-center active" onclick="updateState({paymentMethod: 'refmb'})">REF. MB</span>
+                                    <span id="mbway" class="modal-metodo-pagamento text-center" onclick="updateState({paymentMethod: 'mbway'})">MBWAY</span>
+                                    <span id="visa" class="modal-metodo-pagamento text-center" onclick="updateState({paymentMethod: 'visa'})">VISA</span>
+                                    <span id="paypal" class="modal-metodo-pagamento text-center" onclick="updateState({paymentMethod: 'paypal'})">PAYPAL</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-3">
+                                <div class="py-3 px-3">
+                                    <label class="form-label" for="telemovel">Telemóvel *</label>
+                                    <input type="number" class="form-control" id="telemovel" required>
+                                </div>
+                                <div class="py-3 px-3">
+                                    <label class="form-label" for="nif">Contribuinte</label>
+                                    <input type="number" class="form-control" id="nif">  
+                                </div>
+                                <div class="d-flex flex-column align-items-end justify-content-between py-3 px-3">
+                                    <span class="modal-price"></span>
+                                    <span class="modal-iva">IVA incluido</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-3 px-3">
+                            <div class="col-xs-12 d-flex justify-content-end">
+                                <button type="submit" class="btn btn-primary" onclick="simularCompra()">ENVIAR</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>                
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL TO BUY TICKETS -->
+
+    <nav class="navbar fixed-top">
+        <div class="menu container-fluid d-flex justify-content-end">                        
+            <a href="menu.html"><img src="images/voaMenu.png" alt="Menu"></a>          
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 pt-5">
+                <h5 class="d-flex justify-content-center align-items-center">BILHETES</h5>
+            </div>
+        </div>
+        <div class="row mt-5 pt-5">
+            <div class="col-xs-12 col-sm-6 col-md-4 py-3">
+                <div class="card card-bilhete d-flex align-items-center justify-content-around">
+                    <h6 class="pt-3">bilhete</h6>
+                    <span class="date">16 junho</span>
+                    <span class="preco">€ 50</span>
+                    <div class="local-compra d-flex flex-column justify-content-evenly align-items-center">
+                        <span>Ticketline</span>
+                        <span>Blueticket</span>
+                        <span>Festicket</span>
+                    </div>
+                    <button type="button" class="btn btn-secondary comprar" onclick="updateState({price: '€ 50.00', ticket: 'ticket16'})" data-bs-toggle="modal" data-bs-target="#modalComprar">Comprar</button>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 py-3">
+                <div class="card card-bilhete d-flex align-items-center justify-content-around">
+                    <h6 class="pt-3">bilhete</h6>
+                    <span class="date">17 junho</span>
+                    <span class="preco">€ 50</span>
+                    <div class="local-compra d-flex flex-column justify-content-evenly align-items-center">
+                        <span>Ticketline</span>
+                        <span>Blueticket</span>
+                        <span>Festicket</span>
+                    </div>
+                    <button type="button" class="btn btn-secondary comprar" onclick="updateState({price: '€ 50.00', ticket: 'ticket17'})" data-bs-toggle="modal" data-bs-target="#modalComprar">Comprar</button>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 py-3">
+                <div class="card card-bilhete d-flex align-items-center justify-content-around">
+                    <h6 class="pt-3">passe</h6>
+                    <span class="date">16 e 17 junho</span>
+                    <span class="preco">€ 90</span>
+                    <div class="local-compra d-flex flex-column justify-content-evenly align-items-center">
+                        <span>Ticketline</span>
+                        <span>Blueticket</span>
+                        <span>Festicket</span>
+                    </div>
+                    <button type="button" class="btn btn-secondary comprar" onclick="updateState({price: '€ 90.00', ticket: 'ticketpass'})" data-price="€ 90.00" data-bs-toggle="modal" data-bs-target="#modalComprar">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.0.0 Beta -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <!-- JQUERY 3.5.1 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>    
+
+    <script src="scripts/bilheteira.js"></script>
+</body>
+</html>

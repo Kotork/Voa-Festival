@@ -1,0 +1,47 @@
+.bg-video {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+/* Fix to hide youtube info */
+.bg-video iframe {
+    position: absolute;
+    pointer-events: none;
+    top: -6rem;       
+    width: 100%;
+    height: calc(100% + 12rem);
+}
+
+.highlight {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+    text-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.35);
+}
+
+.date {
+    color: #000;
+    -webkit-text-stroke-color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.artist-1,
+.artist-2,
+.artist-3 {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.artist-1 {
+    font-size: 5rem;
+}
+
+.artist-2 {
+    font-size: 3rem;
+}
+
+.artist-3 {
+    font-size: 2rem;
+}

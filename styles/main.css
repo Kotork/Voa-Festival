@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;        
+    scroll-behavior: smooth;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+body {
+    color: #fff;
+}
+
+section {
+    width: 100vw;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 1rem;
+}
+
+h3 {
+
+}
+
+h4 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #E66A29;
+}
+
+h5 {
+    font-size: 4rem;
+    text-transform: uppercase;;
+    letter-spacing: 1rem;
+}
+
+h6 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+/* BOOTSTRAP FIXES */
+.card {
+    background: transparent;
+    overflow: hidden;
+    border: inherit;
+}
+
+.form-label {
+    font-size: 2rem;
+}
+
+.form-control {
+    line-height: 4rem;
+    font-size: 1.6rem;
+}
+
+.btn {
+    border-radius: 5rem;
+    padding: 1.5rem 5rem
+}
+
+.btn-primary {
+    background-color: #E66A29;
+    border-color: #E66A29;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.5rem;
+}
+
+.btn-primary:hover {
+    background-color: #E66A29;
+    border-color: #E66A29;
+    transform: scale(1.1);
+    transition: 0.1s ease-in-out;
+    box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.75);
+}
+
+.btn-secondary:hover {
+    transform: scale(1.1);
+    transition: 0.1s ease-in-out;
+    box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.75);
+}
+/* END BOOTSTRAP FIXES */
+
+/* USEFULL CLASSES */
+.mt-40vh {
+    margin-top: 40vh
+}
+
+.mt-50vh {
+    margin-top: 50vh
+}
+
+.rotate-90 {
+    transform: rotate(90deg);    
+}
+
+.rotate-270 {
+    transform: rotate(270deg);    
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.svg-social {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.svg-social:hover {
+    transform: scale(1.1);
+    transition: 0.1s ease-in-out;
+    box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.75);
+}
+
+.svg-white {
+    fill: #fff;
+}
+/* END USEFULL CLASSES */
+
+/* NAVBAR */
+.menu {
+    padding: 2rem 5rem 0 0;
+}
+
+.menu img {    
+    width: 5rem;
+    height: auto;    
+}
+/* END NAVBAR */

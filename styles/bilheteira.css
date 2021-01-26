@@ -1,0 +1,132 @@
+body {
+    background-color: #061323;
+}
+
+.card-bilhete {
+    background-color: #5A9AB8;   
+    box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.35);
+    min-height: 20rem;
+    border-radius: 1.5rem;
+    padding: 10rem 0;
+}
+
+.card-bilhete:hover {
+    background-color: #E66A29;
+}
+
+.card-bilhete:hover .comprar {
+    display: block;
+}
+
+.card-bilhete:hover .local-compra {    
+    display: none !important;
+}
+
+.card-bilhete:hover h6,
+.card-bilhete:hover .date {
+    color: #000;
+}
+
+.date {
+    margin: 1.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.preco {
+    margin: 1.5rem 0;
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.local-compra {
+    margin: 1.5rem 0;
+}
+
+.local-compra span {
+    font-size: 1.4rem;
+    line-height: 3rem;
+}
+
+.comprar {
+    display: none;
+    margin-top: 7rem;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* MODAL */
+.modal-content {
+    background-color: #061323;
+}
+
+.modal-close {
+    background-color: transparent;
+    border: none;
+}
+
+.modal-close path {
+    fill: #fff;
+}
+
+.modal-close:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-bilhete {
+    font-size: 1.2rem;
+    background-color: #fff;
+    color: #000;
+    padding: 2rem 3rem;
+    margin: 1rem 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    border-radius: 0.5rem;
+    width: 80%;
+}
+
+.modal-metodo-pagamento {
+    font-size: 1.2rem;
+    width: 10rem;
+    background-color: #fff;
+    color: #000;
+    padding: 2rem 1rem;
+    margin-right: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    border-radius: 0.5rem;    
+}
+
+.modal-bilhete:hover,
+.modal-metodo-pagamento:hover {
+    background-color: #E66A29;
+    color: #fff;
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+}
+
+.modal-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: .5rem;
+    padding: 1rem 0;
+}
+
+.modal-iva {
+    font-size: 1.2rem;
+    padding: .5rem 0;
+}
+
+.active {
+    background-color: #E66A29;
+    color: #fff;
+}
+/* END MODAL */
