@@ -20,7 +20,7 @@ $(window).resize(function () {
 
 function initialize() {
     // Initialize Canvas
-    var ctx = document.getElementById("my_canvas").getContext("2d");
+    var ctx = document.getElementById("my-canvas").getContext("2d");
 
     ctx.beginPath();          
     ctx.globalAlpha = 0.7;     

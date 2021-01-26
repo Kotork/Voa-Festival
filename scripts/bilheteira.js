@@ -13,14 +13,6 @@ $(document).ready(function () {
     }
 });
 
-$(window).resize(function () {
-   
-});
-
-modalComprar.addEventListener('shown.bs.modal', function (e) { // Event fired when modal becomes visible
-           
-});
-
 modalComprar.addEventListener('hide.bs.modal', function (e) { // Event fired immediately when the hide instance method has been called
     $('.modal-price').html('');
     $(`#${cart.ticket}`).removeClass('active');
@@ -34,8 +26,6 @@ function updateState (obj) {
     cart.nif = obj.nif ? obj.nif : cart.nif;           
     cart.paymentMethod = obj.paymentMethod ? obj.paymentMethod : cart.paymentMethod;           
     cart.price = obj.price ? obj.price : cart.price;  
-
-    console.log(obj);
       
     updateTicket();      
     updatePaymentMethod();

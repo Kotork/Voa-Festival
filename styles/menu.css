@@ -2,6 +2,10 @@ body {
     background-color: #061323;
 }
 
+span {
+    font-size: 1.6rem;
+}
+
 td {
     width: 33vw;
     height: 33vh;      
@@ -32,10 +36,6 @@ td:not(:last-child) {
 
 tr:not(:last-child) {
     border-block-end: 1px solid white;
-}
-
-span {
-    font-size: 1.6rem;
 }
 
 .menu {
